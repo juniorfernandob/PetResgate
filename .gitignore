@@ -1,0 +1,28 @@
+# Dependências de Pacotes (Node e Java)
+node_modules/
+/frontend/dist/
+/frontend/build/
+target/
+*.class
+*.jar
+*.war
+
+# IDEs e Editores de Código
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Arquivos Locais de Configuração e Senhas (O mais importante!)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Arquivos temporários do Sistema Operacional
+.DS_Store
+Thumbs.db
