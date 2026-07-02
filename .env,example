@@ -1,0 +1,18 @@
+# CONFIGURAÇÕES DO BANCO DE DADOS (POSTGRESQL)
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=petresgate_db
+DB_USER=seu_usuario_postgres
+DB_PASSWORD=sua_senha_aqui
+
+# CONFIGURAÇÕES DE SEGURANÇA (JWT)
+JWT_SECRET=sua_chave_secreta_com_no_minimo_32_caracteres
+JWT_EXPIRATION_TIME=86400000
+
+# ARMAZENAMENTO DE ARQUIVOS (AMAZON S3)
+AWS_ACCESS_KEY_ID=seu_access_key_aqui
+AWS_SECRET_ACCESS_KEY=seu_secret_key_aqui
+AWS_S3_BUCKET_NAME=petresgate-fotos-animais
+
+# CONFIGURAÇÕES DA API (FRONTEND CONECTAR NO BACKEND)
+VITE_API_URL=http://localhost:8080/api
