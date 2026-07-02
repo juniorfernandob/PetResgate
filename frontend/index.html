@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetResgate - Gestão Integrada Modular</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body class="bg-slate-50 font-sans text-slate-700 min-h-screen flex flex-col antialiased">
+
+    <div id="tela-login" class="flex-1 flex items-center justify-center p-4 bg-slate-100"></div>
+
+    <div id="app-container" class="hidden flex-1 flex flex-col md:flex-row min-h-screen">
+        <header class="md:hidden bg-[#0d2142] text-white p-4 flex justify-between items-center shadow-md">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-paw text-xl"></i>
+                <span class="font-bold tracking-wide">PetResgate</span>
+            </div>
+            <button onclick="toggleMenuMobile()" class="text-xl p-1"><i class="fa-solid fa-bars" id="hamburguer-icon"></i></button>
+        </header>
+
+        <aside id="sidebar" class="hidden md:flex flex-col bg-[#0d2142] text-slate-300 w-full md:w-64 border-r border-slate-800">
+            <div class="hidden md:flex items-center space-x-3 p-6 border-b border-slate-800 bg-slate-900/40">
+                <i class="fa-solid fa-paw text-2xl text-white"></i>
+                <span class="text-lg font-bold tracking-wider text-white">PetResgate</span>
+            </div>
+            <nav class="flex-1 p-4 space-y-1" id="menu-dinamico"></nav>
+            <div class="p-4 border-t border-slate-800 text-[11px] text-slate-500 space-y-2 bg-slate-900/20">
+                <div class="flex justify-between text-slate-400">
+                    <span>Nível: <b id="lbl-perfil" class="uppercase text-blue-400"></b></span>
+                    <button onclick="logout()" class="text-red-400 font-bold hover:underline">Sair</button>
+                </div>
+                <div class="text-[10px]"><i class="fa-solid fa-cloud-arrow-up"></i> Backup Nuvem: <span id="lbl-backup" class="text-green-400">Ativo</span></div>
+            </div>
+        </aside>
+
+        <main class="flex-1 p-4 md:p-8 bg-slate-50 overflow-y-auto">
+            <div id="alerta-vacinas" class="mb-6 bg-amber-50 border-l-4 border-amber-500 text-amber-900 p-4 rounded-xl shadow-sm hidden flex justify-between items-center">
+                <div class="flex items-center space-x-3 text-sm">
+                    <i class="fa-solid fa-triangle-exclamation text-amber-600 text-lg animate-pulse"></i>
+                    <div><span class="font-bold">Notificação do Sistema (RF6):</span> Existem doses de referência pendentes para animais da triagem médica.</div>
+                </div>
+                <button onclick="this.parentElement.remove()" class="text-amber-500 hover:text-amber-800 font-bold">×</button>
+            </div>
+
+            <div id="conteudo-tela-ativa"></div>
+        </main>
+    </div>
+
+    <div id="modal-galeria" class="fixed inset-0 z-50 bg-black/90 hidden flex flex-col items-center justify-center p-4"></div>
+
+    <script src="tela-login.js"></script>
+    <script src="tela-dashboard.js"></script>
+    <script src="tela-cadastro-pet.js"></script>
+    <script src="tela-galeria.js"></script>
+    <script src="tela-interesse.js"></script>
+    <script src="tela-veterinario.js"></script>
+    <script src="tela-admin-adocoes.js"></script>
+    <script src="tela-admin-estoque.js"></script>
+    
+    <script src="app.js"></script>
+</body>
+</html>
